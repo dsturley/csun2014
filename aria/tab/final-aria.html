@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<title>ARIA HTML Tabpanel</title>
+	<link rel="stylesheet" href="../css/style.css" media="all">
+</head>
+<body>
+	<h1>ARIA HTML Tabpanel</h1>
+	<div class="tabs">
+		<ul class="navigation" role="tablist" aria-multiselectable="false">
+			<li aria-controls="panel1" tabindex="0" id="tab1" role="tab" aria-selected="true">Tab One</li>
+			<li aria-controls="panel2" tabindex="-1" id="tab2" role="tab">Tab Two</li>
+			<li aria-controls="panel3" tabindex="-1" id="tab3" role="tab">Tab Three</li>
+		</ul>
+		<div role="tabpanel" aria-hidden="false" id="panel1" aria-labelledby="tab1" aria-expanded="true" tabindex="0">
+			<h2>Tab One</h2>
+			<p>Later I learned from Ghak, who had finally come to his tribesmen and returned with a party to rescue me, that the ryth, as it is called, pursued the Sagoths until it had exterminated the entire band.  Ghak was, of course, positive that I had fallen prey to the terrible creature, which, within Pellucidar, is truly the king of beasts.</p>
+		</div>
+		<div role="tabpanel" aria-hidden="true" id="panel2" aria-labelledby="tab2" aria-expanded="false" tabindex="0">
+			<h2>Tab Two</h2>
+			<p>Just at this moment Alice felt a very curious sensation, which puzzled  her a good deal until she made out what it was: she was beginning to  grow larger again, and she thought at first she would get up and leave  the court; but on second thoughts she decided to remain where she was as  long as there was room for her.</p>
+		</div>
+		<div role="tabpanel" aria-hidden="true" id="panel3" aria-labelledby="tab3" aria-expanded="false" tabindex="0">
+			<h2>Tab Three</h2>
+			<p>"I was a young man when the Plague came&mdash;twenty-seven years old; and I  lived on the other side of San Francisco Bay, in Berkeley. You remember  those great stone houses, Edwin, when we came down the hills from Contra  Costa? That was where I lived, in those stone houses. I was a professor  of English literature."</p>
+		</div>
+	</div>
+
+	<script src="../js/jquery-2.1.0.min.js"></script>
+	<script src="../js/keycode.js"></script>
+	<script src="../js/cycle.js"></script>
+	<script src="aria.js"></script>
+</body>
+</html>
