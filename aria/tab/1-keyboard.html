@@ -4,8 +4,10 @@
 	<meta charset="utf8">
 	<title>Classic HTML Tabpanel with Keyboard Handler</title>
 	<link rel="stylesheet" href="../css/style.css" media="all">
+	<link rel="stylesheet" href="../css/class.css" media="all">
 	<script src="../js/jquery-2.1.0.min.js"></script>
 	<script src="../js/keycode.js"></script>
+	<script src="../js/cycle.js"></script>
 </head>
 <body>
 	<h1>Classic HTML Tabpanel with Keyboard Handler</h1>
@@ -28,7 +30,30 @@
 			<p>"I was a young man when the Plague came&mdash;twenty-seven years old; and I  lived on the other side of San Francisco Bay, in Berkeley. You remember  those great stone houses, Edwin, when we came down the hills from Contra  Costa? That was where I lived, in those stone houses. I was a professor  of English literature."</p>
 		</div>
 	</div>
-	<script src="../js/cycle.js"></script>
-	<script src="1-keyboard.js"></script>
+	<script>
+		jQuery('.tabs')
+			.on('keydown', '.navigation li', function (e) {
+				var $target = jQuery(e.target),
+					$siblings = $target.parent().children(),
+					index = $siblings.index($target);
+
+				keyboardListener($siblings, index, e.which);
+			})
+			.on('click', '.navigation li', function (e) {
+				// grab the target of the event
+				var $target = jQuery(e.target);
+
+				// find the panel that is now selected
+				var panel = document.getElementById($target.data('panel'));
+
+				// remove selected from previously selected tabs
+				$target.closest('.tabs').find('.selected').removeClass('selected');
+
+				// update selected class to newly selected tabs
+				jQuery(panel).addClass('selected');
+				$target.addClass('selected');
+
+			});
+	</script>
 </body>
 </html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<title>Modal Dialog Example</title>
+	<link rel="stylesheet" href="css/style.css" media="all">
+	<link rel="stylesheet" href="css/dialog.css" media="all">
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.tabbable.js"></script>
+	<script src="js/keycode.js"></script>
+</head>
+<body>
+	<h1>Modal Dialog Example</h1>
+
+	<button type="button" id="open">Open Dialog</button>
+	<div id="dialog" role="dialog" aria-labelledby="dialog-header" aria-describedby="dialog-content" aria-hidden="true" tabindex="-1">
+		<h2 id="dialog-header">Dialog Header</h2>
+		<div id="dialog-content">
+	        <p>Passepartout grew more and more impatient as they went on, while Fix longed to get out of this difficult region, and was more anxious than Phileas Fogg himself to be beyond the danger of delays and accidents, and set foot on English soil.</p>
+
+			<p>At ten o'clock at night the train stopped at Fort Bridger station, and twenty minutes later entered Wyoming Territory, following the valley of Bitter Creek throughout.  The next day, 7th December, they stopped for a quarter of an hour at Green River station.  Snow had fallen abundantly during the night, but, being mixed with rain, it had half melted, and did not interrupt their progress.  The bad weather, however, annoyed Passepartout; for the accumulation of snow, by blocking the wheels of the cars, would certainly have been fatal to Mr. Fogg's tour.</p>
+	    </div>
+
+        <button type="button" class="close">Close</button>
+	</div>
+
+	<script>
+		function closeDialog() {
+			jQuery('#dialog').attr('aria-hidden', 'true');
+			jQuery('#open').focus();
+		}
+
+		function openDialog() {
+			jQuery('#dialog').attr('aria-hidden', 'false').focus();
+		}
+
+		jQuery('#open')
+			.on('click', function () {
+				openDialog();
+			});
+
+		jQuery('[role="dialog"]')
+			.on('click', '.close', function () {
+				closeDialog();
+			})
+			.on('keydown', function (e) {
+				if (e.which === KEYCODE.ESCAPE) {
+					closeDialog();
+				} else if (e.which === KEYCODE.TAB) {
+					// :tabble is a jQuery UI extension
+					var $tabbable = jQuery(this).find(':tabbable');
+					if (!e.shiftKey && $tabbable.last().is(e.target)) {
+						$tabbable.first().focus();
+						e.preventDefault();
+					} else if (e.shiftKey && $tabbable.first().is(e.target)) {
+						$tabbable.last().focus();
+						e.preventDefault();
+					}
+				}
+			});
+
+	</script>
+</body>
+</html>

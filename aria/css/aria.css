@@ -1,0 +1,35 @@
+.tabs [role="tablist"] {
+	margin: 0;
+	padding: 0;
+	padding-left: 10px;
+}
+.tabs [role="tablist"]:before, .tabs [role="tablist"]:after { content: " ";  display: table; }
+.tabs [role="tablist"]:after { clear: both; }
+
+.tabs [role="tablist"] [role="tab"] {
+	list-style: none;
+	float: left;
+	margin: 0 10px 0 0;
+	border: 1px solid #666;
+	border-radius: 3px 3px 0 0;
+	border-bottom: none;
+	color: #06c;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.tabs [role="tablist"] .selected, .tabs [role="tablist"] [aria-selected="true"] {
+	background: #06c;
+	color: #fff;
+}
+
+.tabs [role="tabpanel"] {
+	display: none;
+	border: 1px solid #666;
+	border-radius: 3px;
+	padding: 5px 10px;
+}
+
+.tabs [role="tabpanel"].selected, .tabs [role="tabpanel"][aria-hidden="false"] {
+	display: block;
+}

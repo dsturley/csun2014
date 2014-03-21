@@ -10,7 +10,7 @@ jQuery('.tabs').each(function (_, tab) {
 		// find the panel that is now selected
 		var panel = document.getElementById($target.attr('aria-controls'));
 
-		// remove selected from previously selected tabs
+		// remove selected from previously selected tabs and tab panels
 		$tabs.attr({
 			'aria-selected': 'false',
 			tabindex: -1

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<title>Checkbox examples</title>
+	<link rel="stylesheet" href="css/style.css" media="all">
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/keycode.js"></script>
+	<style type="text/css">
+		[role="checkbox"]:before {
+			background: url(css/checkboxes.png) no-repeat -17px 0;
+			width: 15px;
+			height: 15px;
+			padding-right: 2px;
+			display: inline-block;
+			content: " ";
+		}
+		[role="checkbox"][aria-checked="true"]:before {
+			background-position: 0 0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Checkbox examples</h1>
+	<h2>ARIA Checkboxes</h2>
+	<span role="checkbox" aria-checked="false" tabindex="0">ARIA Checkbox 1</span>
+	<span role="checkbox" aria-checked="false" tabindex="0">ARIA Checkbox 2</span>
+	<span role="checkbox" aria-checked="false" tabindex="0">ARIA Checkbox 3</span>
+	
+	<h2>Native Checkbox</h2>
+	<label><input type="checkbox"> Native Checkbox 1</label>
+	<label><input type="checkbox"> Native Checkbox 2</label>
+	<label><input type="checkbox"> Native Checkbox 3</label>
+
+	<script>
+		function toggleCheck(element) {
+			var $target = jQuery(element);
+			$target.attr('aria-checked', $target.attr('aria-checked') === 'true' ? 'false' : 'true');
+		}
+
+		jQuery('[role="checkbox"]')
+			.on('keydown', function (e) {
+				if (e.which === KEYCODE.SPACE)
+					toggleCheck(e.target);
+			})
+			.on('click', function (e) {
+				toggleCheck(e.target);
+			});
+	</script>
+</body>
+</html>

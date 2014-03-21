@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Example</title>
+<link type="text/css" rel="stylesheet" href="css/jquery.a11yfy.core.css">
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery.a11yfy.core.js"></script>
+</head>
+<body>
+<h1>Menu</h1>
+<p>
+    <a href="#">before</a>
+</p>
+<div style="min-height:400px;">
+    <div role="navigation">
+        <ul class="menu mainmenu a11yfy-top-level-menu" id="menu.main" role="menubar"><li class="home" id="menu.main.user.home" role="menuitem" tabindex="-1"><a href="/FireEyes/user/home" tabindex="-1">Home</a></li><li class="children dashboard a11yfy-has-submenu" id="menu.main.dashboard" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1"><span>Dashboards</span><ul class="a11yfy-second-level-menu" role="menu"><li class="dashboard" id="menu.main.dashboard.dashboard.allorgs" role="menuitem" tabindex="-1"><a href="/FireEyes/dashboard/allorgs/170" tabindex="-1">System</a></li><li class="dashboard" id="menu.main.dashboard.dashboard.organization" role="menuitem" tabindex="-1"><a href="/FireEyes/dashboard/organization/170" tabindex="-1">Organization</a></li><li class="dashboard" id="menu.main.dashboard.dashboard.project" role="menuitem" tabindex="-1"><a href="/FireEyes/dashboard/project/785" tabindex="-1">Project</a></li></ul></li><li class="pages" id="menu.main.organizationProject.pages" role="menuitem" tabindex="-1"><a href="/FireEyes/organizationProject/pages/785" tabindex="-1">Pages</a></li><li class="issues" id="menu.main.organizationProject.issues" role="menuitem" tabindex="-1"><a href="/FireEyes/organizationProject/issues/785" tabindex="-1">Issues</a></li><li class="scans" id="menu.main.organizationProject.spiderjobs" role="menuitem" tabindex="-1"><a href="/FireEyes/organizationProject/spiderjobs/785" tabindex="-1">Scans</a></li><li aria-selected="true" class="children settings active a11yfy-has-submenu" id="menu.main.settings" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="0"><span>Settings</span><ul class="a11yfy-second-level-menu" role="menu"><li aria-selected="true" class="settings active" id="menu.main.settings.systemAdmin.general" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/general" tabindex="-1">System</a></li><li class="settings" id="menu.main.settings.organization.settings" role="menuitem" tabindex="-1"><a href="/FireEyes/organization/settings/170" tabindex="-1">Organization</a></li><li class="settings" id="menu.main.settings.organizationProject.show" role="menuitem" tabindex="-1"><a href="/FireEyes/organizationProject/show/785" tabindex="-1">Project</a></li></ul></li></ul>
+        <div class="secondary-wrap">
+            <ul class="menu secondary a11yfy-top-level-menu" id="menu.system.settings" role="menubar"><li id="menu.system.settings.systemAdmin.general" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/general" tabindex="-1">General</a></li><li aria-selected="true" class="active" id="menu.system.settings.systemAdmin.organizations" role="menuitem" tabindex="0"><a href="/FireEyes/systemAdmin/organizations" tabindex="-1">Organizations</a></li><li id="menu.system.settings.systemAdmin.projectsManagement" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/projectsManagement" tabindex="-1">Projects</a></li><li id="menu.system.settings.systemAdmin.userManagement" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/userManagement" tabindex="-1">Users</a></li><li id="menu.system.settings.systemAdmin.monitorSpiderjobs" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/monitorSpiderjobs" tabindex="-1">Scan Activity</a></li><li id="menu.system.settings.systemAdmin.configuredRules" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/configuredRules" tabindex="-1">Rules</a></li><li id="menu.system.settings.systemAdmin.instances" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/instances" tabindex="-1">Servers</a></li><li id="menu.system.settings.systemAdmin.lcmonitor" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/lcmonitor" tabindex="-1">Load Controller</a></li><li class="children a11yfy-has-submenu" id="menu.system.settings.systemAdmin.cluster" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1"><span>Cluster</span><ul class="a11yfy-second-level-menu" role="menu"><li id="menu.system.settings.systemAdmin.cluster.systemAdmin.clusterStatus" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/clusterStatus" tabindex="-1">Status</a></li><li id="menu.system.settings.systemAdmin.cluster.systemAdmin.clusterConfig" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/clusterConfig" tabindex="-1">Configuration</a></li></ul></li><li id="menu.system.settings.systemAdmin.manageAuthKeys" role="menuitem" tabindex="-1"><a href="/FireEyes/systemAdmin/manageAuthKeys" tabindex="-1">Authentication Keys</a></li></ul>
+        </div>
+    </div>
+</div>
+<p>
+<a href="#">after</a>
+</p>
+
+</body>
+</html>
